@@ -6,7 +6,7 @@ const WorkoutSchema = new Schema({
     day: {
         type: Date,
         default: () => new Date()
-},
+    },
     exercises: [ {
         type: {
             type: String,
@@ -31,19 +31,15 @@ const WorkoutSchema = new Schema({
         sets: {
             type: Number,
         },
-        duration: {
-            type: Number,
-        }
-
-
     }
 
     ]
-}, {toJSON: {virtuals:true}})
+}) ;
+//{toJSON: {virtuals:true}})
 
 // TODO create virtuals function see mongoose doc.
 
 // TODO create server file and finish schema
 
-const workout = mongoose.model("workout", WorkoutSchema); 
-module.exports = workout;
+const Workout = mongoose.model("Workout", WorkoutSchema); 
+module.exports = Workout;

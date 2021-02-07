@@ -3,6 +3,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const dotenv = require('dotenv').config();
 
+
 const PORT = process.env.PORT || 3000;
 
 const db = require("./models");
@@ -20,10 +21,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+    // useCreateIndex: true,
+    // useFindAndModify: false
   }
 );
+
+//TODO fix this route to connect 
+app.use(require("./routes/api.js"));
+
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
