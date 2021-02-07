@@ -6,8 +6,6 @@ const dotenv = require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
 
-// const db = require("./models");
-
 const app = express();
 
 app.use(logger("dev"));
@@ -26,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
   }
 );
 
-//TODO fix this route to connect 
+// fixed this route to connect 
 app.use(require("./routes/api.js"));
 
 

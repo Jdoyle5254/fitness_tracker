@@ -31,11 +31,9 @@ const WorkoutSchema = new Schema({
         sets: {
             type: Number,
         },
-    }
-
+    },   {toJSON: {virtuals:true}}
     ]
-}) ;
-//{toJSON: {virtuals:true}})
+});
 
 // TODO create virtuals function see mongoose doc.
 
