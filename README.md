@@ -27,10 +27,11 @@ They are presented with their last workout and an option to continue or create a
 ![Mainpage](https://user-images.githubusercontent.com/69594945/107537343-62aa8a00-6b88-11eb-8951-4ddc57c9773e.PNG)
 
 If they opt to create a new workout they are presented with a screen to input the type of workout, the distance, and the time or other options depending on the type of workout they choose: 
+![NewWorkout](https://user-images.githubusercontent.com/69594945/107537345-62aa8a00-6b88-11eb-8aab-4f7f4f7ae3f0.PNG)
+![AddExercise](https://user-images.githubusercontent.com/69594945/107537336-6211f380-6b88-11eb-811d-e8503a53db35.PNG)
 
 When they enter the new information they can navigate to the dashboard to see their added results and stats: 
-
-
+![Dashboard](https://user-images.githubusercontent.com/69594945/107537340-6211f380-6b88-11eb-90c5-787417451fdf.PNG)
 
 
 ## Credits
