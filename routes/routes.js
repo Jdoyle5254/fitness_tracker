@@ -2,9 +2,25 @@ const router = require("express").Router();
 const Workout = require("../Models/workout.js");
 
 
-router.get("/api/workouts", (req, res) => {
-    Workout.find({}).then(dbWorkout => {
+router.get("/api/workouts/", (req, res) => {
+    Workout
+    // .find({})
+      .aggregate(
+        [
+          //{$match : {_id:req.params.id}},
+          {
+            $project:
+            { 
+              day: "$day",
+              totalDuration: { $sum: "$exercises.duration" },
+              totalDistance: { $sum: "$exercises.distance" },
+              totalweight: { $sum: "exercises.weight" },
+              exercises: "$exercises"
+            }
+          }])
+          .then(dbWorkout => {
         res.json(dbWorkout);
+        console.log("the workout", dbWorkout)
       })
       .catch(err => {
         res.status(400).json(err);
@@ -12,7 +28,20 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.get("/api/workouts/range", (req, res) => {
-  Workout.find({}).then(dbWorkout => {
+  Workout      .aggregate(
+    [
+      //{$match : {_id:req.params.id}},
+      {
+        $project:
+        { 
+          day: "$day",
+          totalDuration: { $sum: "$exercises.duration" },
+          totalDistance: { $sum: "$exercises.distance" },
+          totalweight: { $sum: "exercises.weight" },
+          exercises: "$exercises"
+        }
+      }])
+.then(dbWorkout => {
       res.json(dbWorkout);
     })
     .catch(err => {

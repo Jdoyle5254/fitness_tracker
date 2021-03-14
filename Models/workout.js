@@ -17,9 +17,11 @@ const WorkoutSchema = new Schema({
             type: String,
             trim: true,
             required: "Name is required"
-
         },
         duration: {
+            type: Number,
+        },
+        distance: {
             type: Number,
         },
         weight: {
